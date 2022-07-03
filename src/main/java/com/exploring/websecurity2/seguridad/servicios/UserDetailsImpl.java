@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import com.exploring.websecurity2.modelos.User;
+import com.exploring.websecurity2.proyecciones.PermisoView;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 public class UserDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
@@ -25,9 +26,10 @@ public class UserDetailsImpl implements UserDetails {
 		this.password = password;
 		this.authorities = authorities;
 	}
-	public static UserDetailsImpl build(User user) {
-		List<GrantedAuthority> authorities = user.getRoles().stream()
-				.map(role -> new SimpleGrantedAuthority(role.getName().name()))
+	public static UserDetailsImpl build(User user, List<PermisoView> permisos) {
+		
+		List<GrantedAuthority> authorities = permisos.stream()
+				.map(role -> new SimpleGrantedAuthority(role.getAlias()))
 				.collect(Collectors.toList());
 		return new UserDetailsImpl(
 				user.getId(), 

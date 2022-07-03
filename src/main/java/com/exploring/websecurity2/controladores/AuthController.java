@@ -25,6 +25,7 @@ import com.exploring.websecurity2.payload.request.LoginRequest;
 import com.exploring.websecurity2.payload.request.SignupRequest;
 import com.exploring.websecurity2.payload.response.JwtResponse;
 import com.exploring.websecurity2.payload.response.MessageResponse;
+import com.exploring.websecurity2.proyecciones.PermisoView;
 import com.exploring.websecurity2.repositorios.RoleRepository;
 import com.exploring.websecurity2.repositorios.UserRepository;
 import com.exploring.websecurity2.seguridad.jwt.JwtUtils;
@@ -55,11 +56,12 @@ public class AuthController {
 		List<String> roles = userDetails.getAuthorities().stream()
 				.map(item -> item.getAuthority())
 				.collect(Collectors.toList());
+		List<PermisoView> permisos = userRepository.getAllPermisosFor(userDetails.getUsername());
 		return ResponseEntity.ok(new JwtResponse(jwt, 
 												 userDetails.getId(), 
 												 userDetails.getUsername(), 
 												 userDetails.getEmail(), 
-												 roles));
+												 permisos));
 	}
 	@PostMapping("/signup")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
