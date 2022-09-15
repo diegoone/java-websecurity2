@@ -7,9 +7,11 @@ import java.util.stream.Collectors;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import com.exploring.websecurity2.modelos.User;
+
 import com.exploring.websecurity2.proyecciones.PermisoView;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import model.User;
 public class UserDetailsImpl implements UserDetails {
 	private static final long serialVersionUID = 1L;
 	private Long id;

@@ -18,9 +18,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import model.Role;
+import model.User;
+
 import com.exploring.websecurity2.modelos.ERole;
-import com.exploring.websecurity2.modelos.Role;
-import com.exploring.websecurity2.modelos.User;
 import com.exploring.websecurity2.payload.request.LoginRequest;
 import com.exploring.websecurity2.payload.request.SignupRequest;
 import com.exploring.websecurity2.payload.response.JwtResponse;
@@ -76,9 +77,10 @@ public class AuthController {
 					.body(new MessageResponse("Error: Email is already in use!"));
 		}
 		// Create new user's account
-		User user = new User(signUpRequest.getUsername(), 
-							 signUpRequest.getEmail(),
-							 encoder.encode(signUpRequest.getPassword()));
+		User user = new User();
+		user.setUsername(signUpRequest.getUsername());
+		user.setEmail(signUpRequest.getEmail());
+		user.setPassword(encoder.encode(signUpRequest.getPassword()));
 		Set<String> strRoles = signUpRequest.getRole();
 		Set<Role> roles = new HashSet<>();
 		if (strRoles == null) {
