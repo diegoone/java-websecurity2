@@ -28,7 +28,7 @@ public class Permiso implements Serializable {
 
 	//bi-directional many-to-one association to RolesPermiso
 	@OneToMany(mappedBy="permiso")
-	private List<RolesPermiso> rolesPermisos;
+	private List<RolPermiso> rolesPermisos;
 
 	public Permiso() {
 	}
@@ -65,22 +65,22 @@ public class Permiso implements Serializable {
 		this.nombreComponente = nombreComponente;
 	}
 
-	public List<RolesPermiso> getRolesPermisos() {
+	public List<RolPermiso> getRolesPermisos() {
 		return this.rolesPermisos;
 	}
 
-	public void setRolesPermisos(List<RolesPermiso> rolesPermisos) {
+	public void setRolesPermisos(List<RolPermiso> rolesPermisos) {
 		this.rolesPermisos = rolesPermisos;
 	}
 
-	public RolesPermiso addRolesPermiso(RolesPermiso rolesPermiso) {
+	public RolPermiso addRolesPermiso(RolPermiso rolesPermiso) {
 		getRolesPermisos().add(rolesPermiso);
 		rolesPermiso.setPermiso(this);
 
 		return rolesPermiso;
 	}
 
-	public RolesPermiso removeRolesPermiso(RolesPermiso rolesPermiso) {
+	public RolPermiso removeRolesPermiso(RolPermiso rolesPermiso) {
 		getRolesPermisos().remove(rolesPermiso);
 		rolesPermiso.setPermiso(null);
 

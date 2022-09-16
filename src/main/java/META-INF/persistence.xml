@@ -8,7 +8,7 @@
 		<class>com.exploring.websecurity2.modelos.Permiso</class>
 		<class>com.exploring.websecurity2.modelos.Persona</class>
 		<class>com.exploring.websecurity2.modelos.Role</class>
-		<class>com.exploring.websecurity2.modelos.RolesPermiso</class>
+		<class>com.exploring.websecurity2.modelos.RolPermiso</class>
 		<class>com.exploring.websecurity2.modelos.User</class>
 		<class>com.exploring.websecurity2.modelos.VistaElemento</class>
 	</persistence-unit>
