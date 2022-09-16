@@ -2,14 +2,14 @@
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="java-websecurity2">
 
-		<class>model.ActividadAsociado</class>
-		<class>model.Aportacion</class>
-		<class>model.Asociado</class>
-		<class>model.Permiso</class>
-		<class>model.Persona</class>
-		<class>model.Role</class>
-		<class>model.RolesPermiso</class>
-		<class>model.User</class>
-		<class>model.VistaElemento</class>
+		<class>com.exploring.websecurity2.modelos.ActividadAsociado</class>
+		<class>com.exploring.websecurity2.modelos.Aportacion</class>
+		<class>com.exploring.websecurity2.modelos.Asociado</class>
+		<class>com.exploring.websecurity2.modelos.Permiso</class>
+		<class>com.exploring.websecurity2.modelos.Persona</class>
+		<class>com.exploring.websecurity2.modelos.Role</class>
+		<class>com.exploring.websecurity2.modelos.RolesPermiso</class>
+		<class>com.exploring.websecurity2.modelos.User</class>
+		<class>com.exploring.websecurity2.modelos.VistaElemento</class>
 	</persistence-unit>
 </persistence>

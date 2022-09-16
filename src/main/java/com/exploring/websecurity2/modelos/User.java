@@ -1,4 +1,4 @@
-package model;
+package com.exploring.websecurity2.modelos;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -41,14 +41,14 @@ public class User implements Serializable {
 
 	public User() {
 	}
-/*
+
 	public User(String username, String email, String password) {
 		this.username = username;
 		this.email = email;
 		this.password = password;
 		// TODO Auto-generated constructor stub
 	}
-*/
+
 	public Long getId() {
 		return this.id;
 	}

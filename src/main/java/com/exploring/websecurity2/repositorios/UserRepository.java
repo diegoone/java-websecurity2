@@ -4,9 +4,9 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
-import com.exploring.websecurity2.proyecciones.PermisoView;
 
-import model.User;
+import com.exploring.websecurity2.modelos.User;
+import com.exploring.websecurity2.proyecciones.PermisoView;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 	Optional<User> findByUsername(String username);

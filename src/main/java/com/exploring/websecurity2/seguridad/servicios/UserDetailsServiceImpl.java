@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import model.User;
+import com.exploring.websecurity2.modelos.User;
 import com.exploring.websecurity2.proyecciones.PermisoView;
 import com.exploring.websecurity2.repositorios.UserRepository;
 

@@ -1,4 +1,4 @@
-package model;
+package com.exploring.websecurity2.modelos;
 
 import java.io.Serializable;
 import javax.persistence.*;
