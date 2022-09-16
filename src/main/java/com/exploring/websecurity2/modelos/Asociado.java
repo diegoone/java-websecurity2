@@ -28,7 +28,7 @@ public class Asociado implements Serializable {
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="\"idPersona\"")
+	@JoinColumn(name="idPersona")
 	private Persona persona;
 
 	public Asociado() {
