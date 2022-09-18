@@ -1,6 +1,8 @@
 package com.exploring.websecurity2.modelos;
 
 import java.io.Serializable;
+import java.util.Date;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -17,6 +19,8 @@ public class Asociado implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
+	private Date creadoEn;
+	private String creadoPor;
 
 	//bi-directional many-to-one association to ActividadAsociado
 	@OneToMany(mappedBy="asociado")
@@ -28,7 +32,7 @@ public class Asociado implements Serializable {
 
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
-	@JoinColumn(name="idPersona")
+	@JoinColumn(name="id_persona")
 	private Persona persona;
 
 	public Asociado() {
@@ -92,6 +96,22 @@ public class Asociado implements Serializable {
 
 	public void setPersona(Persona persona) {
 		this.persona = persona;
+	}
+
+	public Date getCreadoEn() {
+		return creadoEn;
+	}
+
+	public void setCreadoEn(Date creadoEn) {
+		this.creadoEn = creadoEn;
+	}
+
+	public String getCreadoPor() {
+		return creadoPor;
+	}
+
+	public void setCreadoPor(String creadoPor) {
+		this.creadoPor = creadoPor;
 	}
 
 }
