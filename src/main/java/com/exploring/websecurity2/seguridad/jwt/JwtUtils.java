@@ -1,12 +1,14 @@
 package com.exploring.websecurity2.seguridad.jwt;
 
 import java.util.Date;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -32,6 +34,16 @@ public class JwtUtils {
 	}
 	public String getUserNameFromJwtToken(String token) {
 		return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
+	}
+	public ModeloToken getModeloToken(Map<String, String> headers) {
+		String headerAuth = headers.get("authorization");
+		if (StringUtils.hasText(headerAuth) && headerAuth.startsWith("Bearer ")) {
+			Jws<Claims> claims = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(headerAuth.substring(7, headerAuth.length()));
+			ModeloToken modeloToken = new ModeloToken();
+			modeloToken.userName = claims.getBody().getSubject();; 
+			return modeloToken;
+		}
+		return null;
 	}
 	public String parseJwt(HttpServletRequest request) {
 		String headerAuth = request.getHeader("Authorization");
