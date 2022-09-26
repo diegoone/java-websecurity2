@@ -22,13 +22,13 @@ public class AsociadoDto {
 	public Date creadoEn;
 	public String creadoPor;
 	public Integer idPersona;
-	public String apellidos;
-	public String codigoUbicacion;
-	public String dui;
-	public Date fechaNacimiento;
-	public String genero;
-	public String nombres;
-	public String ocupacion;
+	public String personaApellidos;
+	public String personaCodigoUbicacion;
+	public String personaDui;
+	public Date personaFechaNacimiento;
+	public String personaGenero;
+	public String personaNombres;
+	public String personaOcupacion;
 	public Integer getId() {
 		return id;
 	}
@@ -53,47 +53,48 @@ public class AsociadoDto {
 	public void setIdPersona(Integer idPersona) {
 		this.idPersona = idPersona;
 	}
-	public String getApellidos() {
-		return apellidos;
+	public String getPersonaApellidos() {
+		return personaApellidos;
 	}
-	public void setApellidos(String apellidos) {
-		this.apellidos = apellidos;
+	public void setPersonaApellidos(String personaApellidos) {
+		this.personaApellidos = personaApellidos;
 	}
-	public String getCodigoUbicacion() {
-		return codigoUbicacion;
+	public String getPersonaCodigoUbicacion() {
+		return personaCodigoUbicacion;
 	}
-	public void setCodigoUbicacion(String codigoUbicacion) {
-		this.codigoUbicacion = codigoUbicacion;
+	public void setPersonaCodigoUbicacion(String personaCodigoUbicacion) {
+		this.personaCodigoUbicacion = personaCodigoUbicacion;
 	}
-	public String getDui() {
-		return dui;
+	public String getPersonaDui() {
+		return personaDui;
 	}
-	public void setDui(String dui) {
-		this.dui = dui;
+	public void setPersonaDui(String personaDui) {
+		this.personaDui = personaDui;
 	}
-	public Date getFechaNacimiento() {
-		return fechaNacimiento;
+	public Date getPersonaFechaNacimiento() {
+		return personaFechaNacimiento;
 	}
-	public void setFechaNacimiento(Date fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
+	public void setPersonaFechaNacimiento(Date personaFechaNacimiento) {
+		this.personaFechaNacimiento = personaFechaNacimiento;
 	}
-	public String getGenero() {
-		return genero;
+	public String getPersonaGenero() {
+		return personaGenero;
 	}
-	public void setGenero(String genero) {
-		this.genero = genero;
+	public void setPersonaGenero(String personaGenero) {
+		this.personaGenero = personaGenero;
 	}
-	public String getNombres() {
-		return nombres;
+	public String getPersonaNombres() {
+		return personaNombres;
 	}
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
+	public void setPersonaNombres(String personaNombres) {
+		this.personaNombres = personaNombres;
 	}
-	public String getOcupacion() {
-		return ocupacion;
+	public String getPersonaOcupacion() {
+		return personaOcupacion;
 	}
-	public void setOcupacion(String ocupacion) {
-		this.ocupacion = ocupacion;
+	public void setPersonaOcupacion(String personaOcupacion) {
+		this.personaOcupacion = personaOcupacion;
 	}
+	
 	
 }
